@@ -3,7 +3,7 @@
  * Plugin Name: MotoPress and CherryFramework 4 Integration
  * Plugin URI: http://www.getmotopress.com/
  * Description: Extend MotoPress Content Editor plugin with CherryFramework 4 shortcodes.
- * Version: 1.1.6
+ * Version: 1.1.6.1
  * Author: MotoPress & Cherry Team
  * Author URI: http://www.getmotopress.com/
  * License: GPL2 or later
@@ -35,6 +35,7 @@ class MPCE_Cherry4 {
 		add_action( 'mp_library', array( $this, 'mpce_cherry4_library_extend' ), 11, 1);
 
 		add_action( 'plugins_loaded', array( $this, 'constants' ), 1 );
+		add_action( 'plugins_loaded', array( $this, 'lang' ), 2 );
 		add_action( 'plugins_loaded', array( $this, 'mpce_cherry4_plugins_loaded' ), 11 );
 		add_action( 'plugins_loaded', array( $this, 'admin' ), 11 );
 
@@ -44,19 +45,29 @@ class MPCE_Cherry4 {
 		add_filter( 'cherry_shortcodes_output_row_class', array( $this, 'mpce_cherry4_row_class' ) );
 		add_filter( 'cherry_shortcodes_output_row_inner_class', array( $this, 'mpce_cherry4_row_class' ) );
 
-		add_filter( 'after_setup_theme', array( $this, 'custom_cherry_shortcodes' ), 99 );
+		add_action( 'after_setup_theme', array( $this, 'custom_cherry_shortcodes' ), 99 );
 
-		if (isset($_GET['motopress-ce']) && $_GET['motopress-ce'] === '1') {
-			add_action( 'wp_enqueue_scripts', array( $this, 'mpce_cherry4_scripts' ));
+		if ( isset( $_GET['motopress-ce'] ) && $_GET['motopress-ce'] === '1' ) {
+			add_action( 'wp_enqueue_scripts', array( $this, 'mpce_cherry4_scripts' ) );
+			add_filter( 'cherry_shortcodes_use_generated_style', '__return_false' );
 		} else {
-			add_action('wp_print_styles', array( $this, 'mpce_cherry4_wp_print_styles' ));
+			add_action( 'wp_print_styles', array( $this, 'mpce_cherry4_wp_print_styles' ) );
 		}
 
 	}
 
 	public function constants() {
-		define( 'MOTO_CHERRY4_VERSION', '1.1.6' );
+		define( 'MOTO_CHERRY4_VERSION', '1.1.6.1' );
 		define( 'MOTO_CHERRY4_SLUG', basename( dirname( __FILE__ ) ) );
+	}
+
+	/**
+	 * Loads the translation files.
+	 *
+	 * @since 1.1.7
+	 */
+	public function lang() {
+		load_plugin_textdomain( 'motopress-cherryframework4', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 	}
 
 	public function mpce_cherry4_wp_print_styles() {
@@ -206,7 +217,7 @@ class MPCE_Cherry4 {
 
 				$params['content'] = array(
 					'type' => 'longtext-tinymce',
-					'label' => __( 'Content', 'cherry-shortcodes' ),
+					'label' => __( 'Content', 'motopress-cherryframework4' ),
 					'text' => empty($motopressCELang) ? 'Open in WordPress Editor' : $motopressCELang->CEOpenInWPEditor,
 					'default' => $shortcode_content,
 					'saveInContent' => 'true'
@@ -484,18 +495,44 @@ class MPCE_Cherry4 {
 					}
 				}
 
-				 //Fill group list of team shortcode
-				if ($shortcode == 'team' && ($att_id == 'group')) {
+				// Fill group list of team shortcode
+				if ( $shortcode == 'team' && ( $att_id == 'group' ) ) {
 
 					$terms = get_terms( 'group' );
 					if ( ! is_wp_error( $terms ) ) {
-						$terms_list = wp_list_pluck( $terms, 'name', 'slug' );
-						$param["list"] = $terms_list;
+						$param['list'] = wp_list_pluck( $terms, 'name', 'slug' );
 					}
 				}
 
-				if (count($param)) {
-					$params[$att_id] = $param;
+				// Fill services list of categories shortcode
+				if ( $shortcode == 'services' && ( $att_id == 'categories' ) ) {
+
+					$terms = get_terms( CHERRY_SERVICES_NAME . '_category' );
+					if ( ! is_wp_error( $terms ) ) {
+						$param['list'] = wp_list_pluck( $terms, 'name', 'slug' );
+					}
+				}
+
+				// Fill list of categories for `[cherry_blog]` shortcode
+				if ( $shortcode == 'blog' && ( $att_id == 'category' ) ) {
+
+					$terms = get_terms( 'category' );
+					if ( ! is_wp_error( $terms ) ) {
+						$param['list'] = wp_list_pluck( $terms, 'name', 'slug' );
+					}
+				}
+
+				// Fill list of categories for `[cherry_testimonials]` shortcode
+				if ( $shortcode == 'testimonials' && ( $att_id == 'category' ) ) {
+
+					$terms = get_terms( CHERRY_TESTI_NAME . '_category' );
+					if ( ! is_wp_error( $terms ) ) {
+						$param['list'] = wp_list_pluck( $terms, 'name', 'slug' );
+					}
+				}
+
+				if ( count( $param ) ) {
+					$params[ $att_id ] = $param;
 				}
 			}
 		}
