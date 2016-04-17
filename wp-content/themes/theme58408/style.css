@@ -15,16 +15,19 @@ Cherry Version: 4.0.5.1
 
 /* Theme customization starts here
 -------------------------------------------------------------- */
+#menu-primary > #menu-primary-items > .menu-item > a {
+    min-width: 145px;
+}
 
 .site-branding {
     position: relative;
-    padding: 5px !important;
+    padding: 0 !important;
 }
 
 .site-description {
     font-weight: bold;
     position: absolute;
-    text-shadow: #1b1f1b 0 0 2px;
+    text-shadow: 0 0 2px #1b1f1b, 0 0 5px #1b1f1b;
     bottom: 0;
     left: 33px;
 }
