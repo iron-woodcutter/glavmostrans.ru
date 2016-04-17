@@ -15,3 +15,15 @@ Cherry Version: 4.0.5.1
 
 /* Theme customization starts here
 -------------------------------------------------------------- */
+
+.site-branding {
+    position: relative;
+}
+
+.site-description {
+    font-weight: bold;
+    position: absolute;
+    text-shadow: #1b1f1b 0 0 2px;
+    bottom: 0;
+    left: 33px;
+}
