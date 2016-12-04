@@ -118,7 +118,6 @@ $editing = false;
 if ( isset($_GET['page']) ) {
 	$plugin_page = wp_unslash( $_GET['page'] );
 	$plugin_page = plugin_basename($plugin_page);
-	var_dump($plugin_page);
 }
 
 if ( isset( $_REQUEST['post_type'] ) && post_type_exists( $_REQUEST['post_type'] ) )
