@@ -20,7 +20,6 @@ class cherry_footer_logo_static extends cherry_register_static {
 	 */
 	public function callback() {
 		echo cherry_get_site_logo( 'footer' );
-		echo cherry_get_site_description();
 	}
 }
 
