@@ -28,8 +28,8 @@ jQuery( document ).ready(function() {
     });
 
 
-	$('.main_page_show_more_text').click(function(e) {
+	jQuery('.main_page_show_more_text').click(function(e) {
 		e.preventDefault();
-		$('.main_page_more_text').toggleClass('hide');
+		jQuery('.main_page_more_text').toggleClass('hide');
 	});
 });
