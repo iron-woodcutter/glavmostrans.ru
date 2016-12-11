@@ -26,4 +26,10 @@ jQuery( document ).ready(function() {
 	      return '<span>0</span>';
 	     }
     });
+
+
+	$('.main_page_show_more_text').on('click', function(e) {
+		e.preventDefault();
+		$('.main_page_more_text').toggleClass('hide');
+	});
 });
