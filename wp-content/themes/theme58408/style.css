@@ -43,3 +43,15 @@ Cherry Version: 4.0.5.1
 .main_page_more_text.hide {
     display: none;
 }
+
+#menu-primary > #menu-primary-items > .menu-item.small {
+    width: 155px;
+}
+
+#menu-primary > #menu-primary-items > .menu-item > a {
+    height: 70px;
+    padding: 0 10px;
+}
+#menu-primary > #menu-primary-items > .menu-item.small > a {
+    font-size: 14px;
+}
