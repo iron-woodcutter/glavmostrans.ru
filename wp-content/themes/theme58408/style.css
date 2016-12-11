@@ -50,7 +50,7 @@ Cherry Version: 4.0.5.1
 
 #menu-primary > #menu-primary-items > .menu-item > a {
     height: 70px;
-    padding: 0 10px;
+    padding: 10px 10px;
 }
 #menu-primary > #menu-primary-items > .menu-item.small > a {
     font-size: 14px;
