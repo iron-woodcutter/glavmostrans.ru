@@ -39,3 +39,7 @@ Cherry Version: 4.0.5.1
     float: left;
     padding: 0 20px 0 0;
 }
+
+.main_page_more_text.hide {
+    display: none;
+}
