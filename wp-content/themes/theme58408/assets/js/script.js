@@ -32,4 +32,6 @@ jQuery( document ).ready(function() {
 		e.preventDefault();
 		jQuery('.main_page_more_text').toggleClass('hide');
 	});
+
+	jQuery('.site-info a:contains("Privacy Policy")').remove();
 });

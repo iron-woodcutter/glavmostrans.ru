@@ -70,3 +70,9 @@ Cherry Version: 4.0.5.1
     font-size: 14px;
     text-align: center;
 }
+.static-footer-logo .cherry-footer-logo {
+    text-align: center;
+}
+.static-footer-logo .site-description {
+    position: unset;
+}
