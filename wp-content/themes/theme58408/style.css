@@ -19,9 +19,11 @@ Cherry Version: 4.0.5.1
     min-width: 145px;
 }
 
-.site-branding {
+#header .site-branding {
     position: relative;
-    padding: 0 !important;
+    padding: 0 0 22px !important;
+    background: #fff !important;
+    box-shadow: unset;
 }
 
 .site-description {
@@ -54,4 +56,17 @@ Cherry Version: 4.0.5.1
 }
 #menu-primary > #menu-primary-items > .menu-item.small > a {
     font-size: 14px;
+}
+
+#menu-secondary > #menu-secondary-items > .menu-item.small {
+    width: 155px;
+}
+
+#menu-secondary > #menu-secondary-items > .menu-item > a {
+    height: 70px;
+    padding: 10px 10px;
+}
+#menu-secondary > #menu-secondary-items > .menu-item.small > a {
+    font-size: 14px;
+    text-align: center;
 }
