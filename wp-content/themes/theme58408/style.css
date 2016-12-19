@@ -92,3 +92,9 @@ Cherry Version: 4.0.5.1
     top: auto;
     margin: auto 0 10px;
 }
+
+.list-short-description {
+    list-style: none;
+    font-size: 0.8pt;
+    font-style: italic;
+}
