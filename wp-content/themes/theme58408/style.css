@@ -90,5 +90,5 @@ Cherry Version: 4.0.5.1
 
 #header #static-area-header-top {
     top: auto;
-    margin-top: auto;
+    margin: auto 0 10px;
 }

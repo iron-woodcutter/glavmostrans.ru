@@ -36,7 +36,7 @@ jQuery( document ).ready(function() {
 		if (!text.hasClass('hide')) {
 			jQuery('html, body').animate({
 				scrollTop: text.offset().top - 200
-			}, 2000);
+			}, 500);
 		}
 	});
 
