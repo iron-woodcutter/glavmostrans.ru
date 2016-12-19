@@ -87,3 +87,8 @@ Cherry Version: 4.0.5.1
     margin-bottom: 51px;
     background-color: #e9eae9;
 }
+
+#header #static-area-header-top {
+    top: auto;
+    margin-top: auto;
+}
