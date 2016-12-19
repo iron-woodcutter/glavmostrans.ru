@@ -30,7 +30,14 @@ jQuery( document ).ready(function() {
 
 	jQuery('.main_page_show_more_text').click(function(e) {
 		e.preventDefault();
-		jQuery('.main_page_more_text').toggleClass('hide');
+		var text = jQuery('.main_page_more_text');
+        text.toggleClass('hide');
+
+		if (!text.hasClass('hide')) {
+			jQuery('html, body').animate({
+				scrollTop: text.offset().top
+			}, 2000);
+		}
 	});
 
 	jQuery('.site-info a:contains("Privacy Policy")').remove();
