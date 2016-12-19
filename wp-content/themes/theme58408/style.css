@@ -51,6 +51,7 @@ Cherry Version: 4.0.5.1
 }
 
 #menu-primary > #menu-primary-items > .menu-item > a {
+    line-height: 1.5;
     height: 70px;
     padding: 10px 10px;
 }
