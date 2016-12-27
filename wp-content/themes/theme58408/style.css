@@ -112,3 +112,7 @@ h3.black {
 .paragraph-center {
     text-align: center;
 }
+
+.cherry-breadcrumbs h1 {
+    text-shadow: 1px 1px 2px black;
+}
