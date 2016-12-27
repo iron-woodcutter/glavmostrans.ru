@@ -103,3 +103,12 @@ Cherry Version: 4.0.5.1
     position:relative;
     top: -80px;
 }
+
+h3.black {
+    text-align: center;
+    color: #2b2f2b;
+}
+
+.paragraph-center {
+    text-align: center;
+}
