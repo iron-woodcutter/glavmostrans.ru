@@ -115,7 +115,10 @@
 
 .dashicons-admin-post:before,
 .dashicons-format-standard:before {
-	content: "\f109";
+	/*content: "\f109";*/
+	content: "\1F69B"; /* 🚛 */
+	left: -3px;
+	position: relative;
 }
 
 
