@@ -126,12 +126,12 @@ h3.black {
 }
 
 .content-img {
-    width: 800px;
+    width: 600px;
     margin: 20px auto;
 }
 
 .content-img-left {
     float: left;
     margin: 0 20px 20px 0;
-    width: 600px;
+    width: 480px;
 }
