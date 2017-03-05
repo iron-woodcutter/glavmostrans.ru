@@ -126,12 +126,39 @@ h3.black {
 }
 
 .content-img {
-    width: 600px;
+    max-width: 600px;
     margin: 20px auto;
 }
 
 .content-img-left {
     float: left;
-    margin: 0 20px 20px 0;
-    width: 480px;
+    margin: 0 50px 20px 0;
+    max-width: 480px;
+}
+
+.service-block {
+    margin: 50px 0;
+}
+
+.service-head {
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+.service-price {
+    font-size: 20px;
+    line-height: 1;
+    margin-bottom: 20px;
+    color: #dd9933;
+}
+.service-price span {
+    text-transform: uppercase;
+}
+.service-price strong {
+    color: black;
+}
+
+.service-properties {
+    position: relative;
+    left: 40px;
 }
