@@ -162,7 +162,7 @@ h3.black {
     position: relative;
     left: 40px;
 }
-.service-properties .list-short-description {
+.service-properties .list-short-description, .page-template-templateWithContacts .list-short-description {
     position: relative;
     left: 20px;
 }
