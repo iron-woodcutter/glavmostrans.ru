@@ -162,6 +162,10 @@ h3.black {
     position: relative;
     left: 40px;
 }
+.service-properties .list-short-description {
+    position: relative;
+    left: 20px;
+}
 
 .page-template-templateWithContacts .site-content {
     padding: 0;
