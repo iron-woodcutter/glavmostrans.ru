@@ -162,3 +162,10 @@ h3.black {
     position: relative;
     left: 40px;
 }
+
+.page-template-templateWithContacts .site-content {
+    padding: 0;
+}
+.page-template-templateWithContacts .spacer {
+    height:  60px;
+}
